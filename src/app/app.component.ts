@@ -14,7 +14,7 @@ export class AppComponent {
 
   addTodo() {
     if (this.todo) {
-      this.todos = [...this.todos, this.todo];
+      this.todos = [...this.todos, {todo: this.todo, done: false}];
       this.todo = '';
     }
   }
