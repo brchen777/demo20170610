@@ -9,4 +9,10 @@ export class AppComponent {
 
   inputHint = 'What needs to be done?';
   myColSpan = 2;
+  todo: any[] = [];
+
+  add(item: HTMLInputElement) {
+    this.todo.push(item.value);
+    item.value = '';
+  }
 }
