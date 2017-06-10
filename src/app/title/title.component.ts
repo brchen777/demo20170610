@@ -12,4 +12,5 @@ export class TitleComponent implements OnInit {
   ngOnInit() {
   }
 
+  title = 'Test title';
 }
