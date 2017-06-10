@@ -5,12 +5,14 @@ import { AppComponent } from './app.component';
 import { TitleComponent } from './title/title.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+import { UpperPipe } from './upper.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitleComponent,
-    FooterComponent
+    FooterComponent,
+    UpperPipe
   ],
   imports: [
     BrowserModule,
