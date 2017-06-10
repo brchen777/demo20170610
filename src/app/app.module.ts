@@ -1,10 +1,12 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { TitleComponent } from './title/title.component';
-import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
+
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
 import { UpperPipe } from './upper.pipe';
 import { FilterPipe } from './filter.pipe';
 
@@ -18,7 +20,8 @@ import { FilterPipe } from './filter.pipe';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

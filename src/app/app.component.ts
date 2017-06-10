@@ -1,5 +1,6 @@
 import { FooterComponent } from './footer/footer.component';
 import { Component, ViewChild } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +14,10 @@ export class AppComponent {
   todo: string;
   todos: any[] = [];
   selectedType = 'all';
+  isToggleAll: boolean;
+
+  constructor(private http: Http) {
+  }
 
   addTodo() {
     if (this.todo) {
@@ -29,5 +34,16 @@ export class AppComponent {
 
   selectTypeChanged(evt) {
     this.selectedType = evt;
+  }
+
+  toggleAll() {
+    this.isToggleAll = !this.isToggleAll;
+    this.todos = this.todos.map(data => {
+      return {todo: data.todo, done: this.isToggleAll};
+    });
+  }
+
+  deleteTodo(item) {
+    this.todos = this.todos.filter(data => item !== data);
   }
 }
