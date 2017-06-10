@@ -9,14 +9,13 @@ export class AppComponent {
 
   inputHint = 'What needs to be done?';
   myColSpan = 2;
+  todo: string;
   todos: any[] = [];
 
-  addTodo(evt: KeyboardEvent) {
-
-    let input = evt.target as HTMLInputElement;
-    if (input.value) {
-      this.todos = [...this.todos, input.value];
-      input.value = '';
+  addTodo() {
+    if (this.todo) {
+      this.todos = [...this.todos, this.todo];
+      this.todo = '';
     }
   }
 }
