@@ -22,6 +22,10 @@ export class FooterComponent implements OnInit {
     this.onClearCompleted.emit();
   }
 
+  printHello() {
+    console.log('hello');
+  }
+
   constructor() { }
 
   ngOnInit() {
