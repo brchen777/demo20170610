@@ -12,6 +12,7 @@ export class AppComponent {
   myColSpan = 2;
   todo: string;
   todos: any[] = [];
+  selectedType = 'all';
 
   addTodo() {
     if (this.todo) {
@@ -24,5 +25,9 @@ export class AppComponent {
 
   clearCompleted() {
     this.todos = this.todos.filter(data => !data.done);
+  }
+
+  selectTypeChanged(evt) {
+    this.selectedType = evt;
   }
 }

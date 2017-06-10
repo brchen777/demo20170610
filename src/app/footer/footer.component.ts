@@ -13,6 +13,9 @@ export class FooterComponent implements OnInit {
 
   @Output() onClearCompleted = new EventEmitter();
 
+  selectedType = 'all';
+  @Output() onselectTypeChanged = new EventEmitter();
+
   private _todos: any[] = [];
   get todos() {
     return this._todos;
@@ -24,6 +27,11 @@ export class FooterComponent implements OnInit {
 
   printHello() {
     console.log('hello');
+  }
+
+  selectTypeChanged(type) {
+    this.selectedType = type;
+    this.onselectTypeChanged.emit(type);
   }
 
   constructor() { }
